@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
+  username: string = 'Admin';
 
+  constructor(private router: Router){}
+
+  redirectTo(path: string): void{
+    this.router.navigate([path]);
+  }
 }
