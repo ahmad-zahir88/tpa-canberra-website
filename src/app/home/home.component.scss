@@ -3,14 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 800px;
-    min-width: 590px;
     max-height: 800px;
     min-height: 590px;
+    gap: 20px;
 }
 
 #tpa-splash{
-    max-width: 60%;
+    height: 60%;
 }
 
 #welcome-msg{
@@ -19,5 +18,5 @@
         text-align: center;
     }
     gap: 5px;
-    width: 50%;
+    width: 80%;
 }

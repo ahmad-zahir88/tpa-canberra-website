@@ -1,0 +1,17 @@
+:host{
+    width: 100%;
+    height: 100%;
+}
+
+#sessions-table{
+    width: 100%;
+    *{
+        text-align: left;
+    }
+}
+
+#sessions-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
