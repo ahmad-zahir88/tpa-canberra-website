@@ -17,7 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
     SessionsRoutingModule,
     MatTableModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ]
 })
 export class SessionsModule { }

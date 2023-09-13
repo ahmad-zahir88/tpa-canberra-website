@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "tpa-canberra"
+  },
+  "targets": {
+    "tpa-canberra": {
+      "hosting": {
+        "tpa-canberra-website": [
+          "tpa-canberra"
+        ]
+      }
+    }
   }
 }

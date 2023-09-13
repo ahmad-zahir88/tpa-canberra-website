@@ -1,0 +1,30 @@
+[debug] [2023-09-13T23:02:20.210Z] ----------------------------------------------------------------------
+[debug] [2023-09-13T23:02:20.212Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy -m trial with firestore
+[debug] [2023-09-13T23:02:20.212Z] CLI Version:   12.5.3
+[debug] [2023-09-13T23:02:20.212Z] Platform:      win32
+[debug] [2023-09-13T23:02:20.213Z] Node Version:  v18.14.0
+[debug] [2023-09-13T23:02:20.213Z] Time:          Thu Sep 14 2023 09:02:20 GMT+1000 (Australian Eastern Standard Time)
+[debug] [2023-09-13T23:02:20.214Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-13T23:02:20.295Z] Field ".hosting" in "firebase.json" is possibly invalid: should be object
+[debug] [2023-09-13T23:02:20.296Z] Object ".hosting[0]" in "firebase.json" is missing required property: {"missingProperty":"target"}
+[debug] [2023-09-13T23:02:20.296Z] Object ".hosting[0]" in "firebase.json" is missing required property: {"missingProperty":"site"}
+[debug] [2023-09-13T23:02:20.296Z] Field ".hosting[0]" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2023-09-13T23:02:20.296Z] Field ".hosting" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2023-09-13T23:02:20.302Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-13T23:02:20.302Z] > authorizing via signed-in user (pengajiankeluarga.cbr@gmail.com)
+[debug] [2023-09-13T23:02:20.302Z] [iam] checking project tpa-canberra for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-09-13T23:02:20.304Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/tpa-canberra:testIamPermissions [none]
+[debug] [2023-09-13T23:02:20.305Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/tpa-canberra:testIamPermissions x-goog-quota-user=projects/tpa-canberra
+[debug] [2023-09-13T23:02:20.305Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tpa-canberra:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-13T23:02:21.357Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/tpa-canberra:testIamPermissions 200
+[debug] [2023-09-13T23:02:21.357Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tpa-canberra:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-13T23:02:21.358Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/tpa-canberra/serviceAccounts/tpa-canberra@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-09-13T23:02:21.358Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/tpa-canberra/serviceAccounts/tpa-canberra@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-09-13T23:02:21.907Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/tpa-canberra/serviceAccounts/tpa-canberra@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-09-13T23:02:21.907Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/tpa-canberra/serviceAccounts/tpa-canberra@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-09-13T23:02:21.908Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tpa-canberra [none]
+[debug] [2023-09-13T23:02:22.657Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tpa-canberra 200
+[debug] [2023-09-13T23:02:22.657Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tpa-canberra {"projectId":"tpa-canberra","projectNumber":"309495602062","displayName":"tpa-canberra","name":"projects/tpa-canberra","resources":{"hostingSite":"tpa-canberra","realtimeDatabaseInstance":"tpa-canberra-default-rtdb"},"state":"ACTIVE","etag":"1_fd349ecd-9fee-4f37-9f12-6242d184bdd1"}
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier

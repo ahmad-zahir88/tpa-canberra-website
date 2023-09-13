@@ -99,6 +99,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "tpa-canberra-website:build:production",
+            "firebaseProject": "tpa-canberra",
+            "firebaseHostingSite": "tpa-canberra"
+          }
         }
       }
     }
