@@ -1,5 +1,7 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, collection, collectionData} from '@angular/fire/firestore';
+import { CollectionReference, Firestore, addDoc, collection, collectionData, doc, setDoc,} from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { Session } from 'src/models/Session';
 
 
 @Injectable({
@@ -8,15 +10,16 @@ import { Firestore, collection, collectionData} from '@angular/fire/firestore';
 export class SessionsCrudService {
   collectionName: string = 'sessions';
   private fs = inject(Firestore);
+  sessionsCollection: CollectionReference = collection(this.fs,this.collectionName);
   constructor() { }
 
-  getAllSessions() {
-    
-    const sessionsCollection= collection(this.fs,'sessions');
-    
-    collectionData(sessionsCollection).subscribe((data)=>{
-      console.log(data);
-      
-    });
+  getAllSessions(): Observable<Session[]> {
+    return collectionData(this.sessionsCollection, {idField: 'date'}) as Observable<Session[]>;
+  }
+
+  createOrUpdateSession(session: Session){
+      const docRef = doc(this.fs,this.collectionName,session.date);
+      const {date, ...sessionRequest} = session;
+      return setDoc(docRef, sessionRequest);
   }
 }

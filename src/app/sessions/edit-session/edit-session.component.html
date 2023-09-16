@@ -1,1 +1,24 @@
-<p>edit-session works!</p>
+<form *ngIf="date; else noDateSelected" [formGroup]="sessionForm" (submit)="saveSession()">
+    <h1 class="mat-headline-4 title">{{_session? 'Edit' : 'Create New'}} Session</h1>
+    <div>
+        <h2 for="date">Date</h2>
+        <span>{{date | date:'dd MMM yyyy'}}</span>
+    </div>
+    <br>
+    <div>
+        <h2 for="classes">Classes</h2>
+        <mat-form-field>
+            <mat-select formControlName="classes" multiple>
+                <mat-option *ngFor="let class of classes" [value]="class.id">{{class.displayName}}</mat-option>
+            </mat-select>
+        </mat-form-field> &nbsp;
+        <a (click)="selectAllClasses()">Select All Classes</a>
+    </div>
+    <button [disabled]="sessionForm.invalid" mat-raised-button color="primary" type="submit"><mat-icon>save</mat-icon>Save</button>
+    &nbsp;
+    <button type="button" (click)="close()" mat-flat-button> <mat-icon>close</mat-icon>Cancel</button>
+</form>
+
+<ng-template #noDateSelected>
+    
+</ng-template>

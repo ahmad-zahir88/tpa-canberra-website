@@ -15,3 +15,25 @@
     justify-content: space-between;
     width: 100%;
 }
+
+#calendar-container{
+    width: 45%;
+    min-width: 350px;
+}
+
+#calendar-and-editor{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+::ng-deep .session-exist:not(.mat-calendar-body-selected){
+    background-color: rgba(103, 58, 183, .17);
+}
+
+@media screen and (max-width: 1024px) {
+    #calendar-and-editor{
+        display: flex;
+        flex-direction: column;
+    }
+}
