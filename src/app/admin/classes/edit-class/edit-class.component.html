@@ -1,0 +1,14 @@
+<div id="edit-class-header">
+    <a routerLink="../../"><mat-icon>arrow_back_ios</mat-icon> Back to Classes </a>
+    <h1 class="mat-headline-2 title">{{class?.displayName}}</h1>
+</div>
+
+<h1 class="mat-headline-4 title subtitle">Sessions</h1>
+<table mat-table [dataSource]="sessions" id="sessions-table" *ngIf="sessions">
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let row"> {{ row.date }} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['date']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['date'];" routerLink="./session/{{row.date}}" class="clickable"></tr>
+</table>

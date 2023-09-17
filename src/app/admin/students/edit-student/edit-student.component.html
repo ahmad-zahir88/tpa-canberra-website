@@ -1,0 +1,34 @@
+
+<div id="edit-student-header">
+    <a routerLink="../../"><mat-icon>arrow_back_ios</mat-icon> Back to Students </a>
+    <h1 class="mat-headline-2 title">{{id ? 'Create' : 'Edit'}} Student</h1>
+</div>
+
+<form [formGroup]="studentForm" (submit)="saveStudent()">
+    <div>
+        <h2 for="date">Internal ID</h2>
+        <span>{{student?.id}}</span>
+    </div>
+    <br>
+    <div>
+        <h2 for="fullName">Name</h2>
+        <mat-form-field>
+            <input matInput type="text" formControlName="fullName"/>
+        </mat-form-field>
+
+        <h2 for="email">Email</h2>
+        <mat-form-field>
+            <input matInput type="text" formControlName="email"/>
+        </mat-form-field>
+
+
+        <h2 for="class">Class</h2>
+        <mat-form-field>
+            <mat-select formControlName="class">
+                <mat-option *ngFor="let class of classes" [value]="class.id">{{class.displayName}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <button [disabled]="studentForm.invalid" mat-raised-button color="primary" type="submit"><mat-icon>save</mat-icon>Save</button>
+    &nbsp;
+</form>

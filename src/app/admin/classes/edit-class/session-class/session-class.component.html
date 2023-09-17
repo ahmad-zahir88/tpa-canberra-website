@@ -1,0 +1,33 @@
+<div id="session-class-header">
+    <a routerLink="../../"><mat-icon>arrow_back_ios</mat-icon> Back to Edit Class </a>
+    <h1 class="mat-headline-2 title">{{date | date:'dd MMMM yyyy'}}</h1>
+    <h1>{{className}}</h1>
+</div>
+<br><br>
+<h1 class="mat-headline-4 title subtitle">Students</h1>
+<table mat-table [dataSource]="students" id="sessions-table" *ngIf="students && attendancesFormArray?.length">
+    <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let row"> {{ row.fullName }} </td>
+    </ng-container>
+    <ng-container matColumnDef="attendance">
+        <th mat-header-cell *matHeaderCellDef>Attendance</th>
+        <td mat-cell *matCellDef="let row; index as i">
+            <mat-checkbox matInput [formControl]="getFormControl(i,'isAttend')" (click)="onAttendanceClick(i)"></mat-checkbox>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="comment">
+        <th mat-header-cell *matHeaderCellDef>Comment</th>
+        <td mat-cell *matCellDef="let row; index as i">
+            <mat-form-field  style="width: 100%; padding: 20px 0;">
+                <textarea cdkTextAreaAutoResize rows="6" matInput [formControl]="getFormControl(i,'comment')"></textarea>
+            </mat-form-field>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['fullName', 'attendance', 'comment']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['fullName', 'attendance', 'comment'];"></tr>
+</table>
+<br><br>
+<button mat-raised-button color="primary" (click)="saveSessionClass()"> <mat-icon>save</mat-icon> Save</button>
+<br>

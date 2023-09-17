@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SessionsCrudService } from '../services/sessions-crud.service';
+import { SessionsCrudService } from '../../../services/sessions-crud.service';
 import { Session } from 'src/models/Session';
 import { Router } from '@angular/router';
 import { DateFormatter } from 'src/util/DateUtil';

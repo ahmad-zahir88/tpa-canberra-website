@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { SessionsCrudService } from './services/sessions-crud.service';
+import { SessionsCrudService } from '../../services/sessions-crud.service';
 import { Session } from 'src/models/Session';
 import { DateFormatter } from 'src/util/DateUtil';
 import { MatCalendar } from '@angular/material/datepicker';
