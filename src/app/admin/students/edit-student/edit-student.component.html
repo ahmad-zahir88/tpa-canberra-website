@@ -28,6 +28,18 @@
                 <mat-option *ngFor="let class of classes" [value]="class.id">{{class.displayName}}</mat-option>
             </mat-select>
         </mat-form-field>
+
+        <h2 for="age">Age</h2>
+        <mat-form-field>
+            <input matInput type="text" formControlName="age"/>
+        </mat-form-field>
+
+        <h2 for="gender">Gender</h2>
+        <mat-form-field>
+            <mat-select formControlName="gender">
+                <mat-option *ngFor="let gender of genders" [value]="gender">{{ gender | uppercase }}</mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
     <button [disabled]="studentForm.invalid" mat-raised-button color="primary" type="submit"><mat-icon>save</mat-icon>Save</button>
     &nbsp;

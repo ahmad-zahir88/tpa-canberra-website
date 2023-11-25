@@ -16,12 +16,15 @@ export class EditStudentComponent implements OnInit{
   studentForm: FormGroup = new FormGroup({
                                 fullName: new FormControl('',Validators.required),
                                 email: new FormControl(''),
-                                class: new FormControl('', Validators.required)
+                                class: new FormControl('', Validators.required),
+                                age: new FormControl(1, [Validators.required, Validators.min(1)]),
+                                gender: new FormControl('', Validators.required)
                               });
   
   student?: Student;
   id?: string;
   classes: Class[] = [];
+  genders: string[] = ['male','female'];
 
   constructor(
     private studentsCrud: StudentsCRUDService,

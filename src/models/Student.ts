@@ -3,4 +3,6 @@ export interface Student{
     fullName: string;
     email: string;
     class: string;
+    age: string;
+    gender: 'male' | 'female';
 }
