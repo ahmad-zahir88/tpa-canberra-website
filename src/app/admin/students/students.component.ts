@@ -11,7 +11,7 @@ import { Student } from 'src/models/Student';
 })
 export class StudentsComponent implements OnInit {
   students: Student[] = [];
-  displayedColumns: string[] = ['fullName','class','age','gender'];
+  displayedColumns: string[] = ['fullName','class'];
   classes: Class[] = [];
 
   constructor(private studentsCrud: StudentsCRUDService, private classesCrud: ClassesCRUDService){}
