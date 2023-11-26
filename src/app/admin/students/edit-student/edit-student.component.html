@@ -37,7 +37,7 @@
         <h2 for="gender">Gender</h2>
         <mat-form-field>
             <mat-select formControlName="gender">
-                <mat-option *ngFor="let gender of genders" [value]="gender">{{ gender | uppercase }}</mat-option>
+                <mat-option *ngFor="let gender of genders" [value]="gender">{{ gender | titlecase }}</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
