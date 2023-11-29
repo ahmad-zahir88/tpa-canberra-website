@@ -1,0 +1,17 @@
+<div id="login-box">
+    <img id="tpa-splash" src="assets/tpa-splash.png" alt="TPA Canberra">
+    <h1  style="font-weight: 600;">TPA Canberra</h1>
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" style="display: flex; flex-direction: column;">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary">Login</button>
+    </form>
+    
+</div>
